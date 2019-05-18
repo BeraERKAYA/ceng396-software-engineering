@@ -9,46 +9,30 @@ public partial class Login : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        LinkButton lbMasterLogin = new LinkButton();
-        lbMasterLogin = (LinkButton)Master.FindControl("LinkButtonLogin");
-        lbMasterLogin.Visible = false;
+
     }
 
-    protected void ButtonSubmit_Click(object sender, EventArgs e)
+    protected void Button1_Click(object sender, EventArgs e)
     {
-
-        try
+        using (var myDB=new tryEntities())
         {
-            LabelResult.Visible = false;
-
-            using (var myDB = new c382atsEntities())
+            var loggeduser = (from u in myDB.users
+                              where u.username == TextBox1.Text
+                              select u).Single();
+            if (loggeduser != null)
             {
-                TblUser loginuser = (from u in myDB.TblUsers
-                                  where u.email == TextBoxEmail.Text &&
-                                  u.pass == TextBoxPass.Text && u.isActive == true
-                                  select u).SingleOrDefault();
+                Session["UserId"] = loggeduser.user_id;
+               
 
-                if (loginuser != null)
-                {
-                    Session["user"] = loginuser;
-                    Response.Redirect("Default");
+                Response.Redirect("ListLevels.aspx");
 
-                }
-                else
-                {
 
-                    LabelResult.Text = "Wrong!!!";
-                    LabelResult.Visible = true;
-                }
-
+            }
+            else
+            {
+                Response.Redirect("Register.aspx");
             }
 
         }
-        catch (Exception)
-        {
-
-            throw;
-        }
-
     }
 }
