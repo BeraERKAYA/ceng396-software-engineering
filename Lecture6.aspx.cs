@@ -1,4 +1,5 @@
-﻿using System;
+//this page is backend of Lecture6.aspx page coded with c#﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,7 +12,7 @@ public partial class Lecture6 : System.Web.UI.Page
     {
         using (var myDB = new tryEntities())
         {
-            var a = Convert.ToInt32(Session["UserId"]);
+            var a = Convert.ToInt32(Session["UserId"]);//get current user's id stored in session
             var b = (from u in myDB.lessons
                      where u.user_id == a && u.level_num == 5
                      select u).Single();
