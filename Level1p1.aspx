@@ -1,4 +1,5 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Level1p1.aspx.cs" Inherits="Level1p1" %>
+<!--This page displays 1st level lecture in html and css,there previos and next button at the end of the page user is directed to the Level1p2.aspx page after clicking nect button, Level1p2.apx page shows the remaining lectures of level 1   -->
+<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Level1p1.aspx.cs" Inherits="Level1p1" %>
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
