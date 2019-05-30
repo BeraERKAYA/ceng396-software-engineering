@@ -1,4 +1,5 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Lecture6.aspx.cs" Inherits="Lecture6" %>
+﻿<!--This page displays 6th level lecture in html and css,at the end of the page there is Done reading Lecture 6 button that user needs to click after reading these lectures-->
+<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Lecture6.aspx.cs" Inherits="Lecture6" %>
 
 <!DOCTYPE html>
 
