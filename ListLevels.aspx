@@ -1,4 +1,5 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="ListLevels.aspx.cs" Inherits="ListLevels" %>
+﻿This is a html,css page that shows the list of levels,lectures and quizes,user can click the page and will be directed to that page-->
+<%@ Page Language="C#" AutoEventWireup="true" CodeFile="ListLevels.aspx.cs" Inherits="ListLevels" %>
 
 <!DOCTYPE html>
 
