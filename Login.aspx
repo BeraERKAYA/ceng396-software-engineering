@@ -1,4 +1,4 @@
-<!-- this is a html,css login page for users,users must enter first name,last name,username,email and password-->﻿
+<!-- this is a html,css login page for users,users must enter username and password and click log in button-->﻿
 <%@ Page Language="C#" AutoEventWireup="true" CodeFile="Login.aspx.cs" Inherits="Login" %>
 
 <!DOCTYPE html>
