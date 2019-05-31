@@ -1,4 +1,5 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="User.aspx.cs" Inherits="User" %>
+﻿<!-- this is a html,css page that shows user name surname,user username,total score and each level score of the user-->
+<%@ Page Language="C#" AutoEventWireup="true" CodeFile="User.aspx.cs" Inherits="User" %>
 
 <!DOCTYPE html>
 
