@@ -1,4 +1,5 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Level10Quiz.aspx.cs" Inherits="Level10Quiz" %>
+﻿<!-- this page is a html,css page that shows level 10 questions,user mustenter his/her answers to textboxex and user must click submit button-->
+<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Level10Quiz.aspx.cs" Inherits="Level10Quiz" %>
 
 <!DOCTYPE html>
 
