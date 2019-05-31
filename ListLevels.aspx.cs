@@ -1,4 +1,5 @@
-﻿using System;
+﻿//this is a backend page for ListLevels.aspx page coded with c#
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,14 +10,14 @@ public partial class ListLevels : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        var cu_id = Convert.ToInt32(Session["UserId"]);
+        var cu_id = Convert.ToInt32(Session["UserId"]);//get current user id from session
         using (var myDB = new tryEntities()) {
             var userlevels = (from u in myDB.levels
                               where u.user_id == cu_id
-                              select u).ToList();
+                              select u).ToList();//get quizes list of the user
             if (userlevels != null)
             {
-                foreach (var y in userlevels)
+                foreach (var y in userlevels)//id user solved any quiz check the appropriate checkbox
                 {
                    
                     if (y.level_num == 2 && y.isSolved == true)
@@ -69,8 +70,8 @@ public partial class ListLevels : System.Web.UI.Page
             }
             var userlessons = (from p in myDB.lessons
                                where p.user_id == cu_id
-                               select p).ToList();
-            if (userlessons != null)
+                               select p).ToList();//get lectures list of the user
+            if (userlessons != null)//if any of the lectures is read check the appropriate checkbox 
             {
 
                 foreach(var b in userlessons)
@@ -131,10 +132,11 @@ public partial class ListLevels : System.Web.UI.Page
 
             }
 
-            var usercertif = (from f in myDB.levels
-                     where f.user_id == cu_id && f.level_num == 10
-                     select f).Single();
-            if (usercertif.isSolved == true)
+            var usercertif = (from f in myDB.certificates
+                     where f.user_id == a 
+                     select f).SingleOrDefault();
+                     
+            if (usercertif != null )
             {
                 Label30.Visible = true;
 
