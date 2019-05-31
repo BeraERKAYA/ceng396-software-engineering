@@ -1,4 +1,5 @@
-﻿using System;
+﻿//this is a backend page for Register.aspx page coded with c3
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -16,14 +17,14 @@ public partial class Register : System.Web.UI.Page
 
 
 
-    protected void Button1_Click1(object sender, EventArgs e)
+    protected void Button1_Click1(object sender, EventArgs e)//after user clicks submit button;
     {
         using (var myDB = new tryEntities())
         {
             var u_exist = (from u in myDB.users
                            where u.username == TextBox3.Text
-                           select u).SingleOrDefault();
-            if (u_exist == null)
+                           select u).SingleOrDefault();//get if user entered username exists in database
+            if (u_exist == null)//if it is not exists
             {
 
                 user s = new user();
@@ -34,10 +35,11 @@ public partial class Register : System.Web.UI.Page
                 s.password = TextBox5.Text;
                 s.totalscore = 0;
                 myDB.users.Add(s);
-                myDB.SaveChanges();
+                myDB.SaveChanges();//store user information to database and save database
                 var loggeduser = (from u in myDB.users
                                   where u.username == TextBox3.Text
                                   select u).Single();
+                                  //create 10 lecture table and 10 quiz table assigned to the user
                 level l1 = new level();
                 l1.level_num = 1;
                 l1.isSolved = false;
@@ -162,12 +164,13 @@ public partial class Register : System.Web.UI.Page
                 s9.isRead = false;
                 myDB.lessons.Add(s9);
                 myDB.SaveChanges();
-                Response.Redirect("Login.aspx");
+                //save changes od 10 lecture and 10 quiz tables
+                Response.Redirect("Login.aspx");//direct to login page
             }
 
-            else
+            else//if user entered username exists in the username;
             {
-                RegularExpressionValidator1.ErrorMessage = "This username exists please choose another username";
+                RegularExpressionValidator1.ErrorMessage = "This username exists please choose another username";//inform user to reenter informations
 
             }
 
